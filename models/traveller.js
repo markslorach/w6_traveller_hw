@@ -2,7 +2,7 @@ const Traveller = function(journeys) {
   this.journeys = journeys;
 };
 
-Traveller.prototype.getJourneyStartLocations = function() {
+Traveller.prototype.getJourneyStartLocations = function () {
   return this.journeys.map(journey => journey.startLocation);
 
   // return this.journeys.map((journey => {
@@ -39,7 +39,11 @@ return this.journeys.reduce((total, journey) => total += journey.distance, 0);
 Traveller.prototype.getUniqueModesOfTransport = function () {
 const typeOfTransport = this.journeys.map(journey => journey.transport);
 // console.log(typeOfTransport);
-return Array.from(new Set(typeOfTransport));
+// const uniqueTransport = Array.from(new Set(typeOfTransport));
+// console.log(uniqueTransport);
+// return uniqueTransport;
+// return Array.from(new Set(typeOfTransport));
+return [...new Set(typeOfTransport)];
 };
 
 
